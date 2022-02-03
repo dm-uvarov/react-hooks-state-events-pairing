@@ -1,14 +1,16 @@
 import React from "react";
 
 function RenderComment(comment) {
-    console.log("comment =",comment);
+
     return (
-    <p key = {comment.id}>
-        <h6 key = {comment.user}>{comment.user}</h6>
-        <p key ={comment.comment}>{comment.comment} </p>
-    </p>
+        <div key={comment.id}>
+            <h4 key={comment.user}>{comment.user}</h4>
+            {comment.comment} 
+        </div>
     );
 }
+
+
 
 export default RenderComment;
 
@@ -25,3 +27,8 @@ export default RenderComment;
 //       comment: "What a great tutorial!",
 //     },
 //   ],
+
+// {/* <div>
+//     <h3></h3>
+//     {some text}
+// </div> */}

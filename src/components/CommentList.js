@@ -3,22 +3,19 @@ import RenderComment from "./RenderComment";
 
 
 
-function CommentList({comments}) {
-    console.log(comments)
-    console.log(comments[comments.length-1].id) 
+function CommentList({ comments }) {
+
     return (
         <>
-            <h4>{comments[comments.length-1].id + ' Comments'} </h4>
-            {comments.map(comment=> {
-                <RenderComment key={comment.id} user = {comment.user} comment = {comment.comment} />
-            }
-            
-            
-            
-            )
-            
+            <h3>{comments.length} Comments'</h3>
+            {comments.map(comment => {
+                return (
+                    <RenderComment key={comment.id} user={comment.user} comment={comment.comment} />
+                )
+            })
 
-}       
+
+            }
         </>
 
     );
