@@ -1,16 +1,28 @@
 import React from "react";
+import RenderComment from "./RenderComment";
 
-function CommentList(props) {
-    console.log(props)
+
+
+function CommentList({comments}) {
+    console.log(comments)
+    console.log(comments[comments.length-1].id) 
     return (
         <>
-            <h4>${2 + 'Comments'} </h4>
-            {/*<h4>{props.video.comments[props.video.comments.length - 1].id + 'Comments'}   </h4>*/}
+            <h4>{comments[comments.length-1].id + ' Comments'} </h4>
+            {comments.map(comment=> {
+                <RenderComment key={comment.id} user = {comment.user} comment = {comment.comment} />
+            }
+            
+            
+            
+            )
+            
 
-
+}       
         </>
 
     );
 }
 
 export default CommentList;
+

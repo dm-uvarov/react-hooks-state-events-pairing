@@ -1,6 +1,7 @@
 import video from "../data/video.js";
 import CommentList from "./CommentList.js";
 import RenderComment from "./RenderComment.js";
+import VideoInfo from "./VideoInfo";
 
 function App() {
   console.log("Here's your data:", video);
@@ -18,6 +19,13 @@ function App() {
       // code here
 
       />
+      <VideoInfo 
+        title = {video.title}
+        views = {video.views}
+        createdAt = {video.createdAt}
+        upvotes = {video.upvotes}
+        downvotes = {video.downvotes}
+        />
       <CommentList comments={video.comments} />
 
 
@@ -26,3 +34,4 @@ function App() {
 }
 
 export default App;
+
